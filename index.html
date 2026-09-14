@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yisa Ephraim Ifedapo | Graphic Designer & Social Media Manager</title>
+  <meta name="description" content="Portfolio of Yisa Ephraim Ifedapo - Graphic Designer, Social Media Manager and Virtual Assistant based in Ibadan, Nigeria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #1a1d24;
+      --surface-2: #242830;
+      --text: #f0f2f5;
+      --muted: #9aa3b2;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border: #2e3440;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(15,17,21,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+    }
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: white;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      border-color: var(--muted);
+      color: var(--text);
+    }
+    section {
+      padding: 4rem 0;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+    .stat-card span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: #3a4150;
+    }
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+    .work-card .info {
+      padding: 1.1rem 1.2rem 1.3rem;
+    }
+    .work-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .work-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .skill-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+      color: var(--accent);
+    }
+    .skill-card ul {
+      list-style: none;
+    }
+    .skill-card li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.25rem 0;
+    }
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .contact-box h2 {
+      margin-bottom: 0.75rem;
+    }
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .contact-links a {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .contact-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Yisa Ephraim</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Yisa Ephraim Ifedapo</h1>
+        <p class="tagline">Graphic Designer & Social Media Manager. I design the graphic, post it on schedule, keep the brand consistent, and think about why it should work.</p>
+        <div class="hero-roles">
+          <span class="badge">Graphic Design</span>
+          <span class="badge">Social Media Management</span>
+          <span class="badge">Virtual Assistance</span>
+          <span class="badge">Brand & Content</span>
+        </div>
+        <div class="cta-row">
+          <a href="#work" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-sub">Based in Ibadan, Nigeria. Over 5 years creating visual identity and running ongoing content.</p>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm a graphic designer and social media manager with experience designing flyers, brand identities, logos, motion graphics and social content for schools, small businesses and independent brands.</p>
+            <p>Design is where I started, but it's not where I stop. I manage social pages on an ongoing basis — planning content calendars, keeping brand voice consistent, and thinking about what happens after something goes live.</p>
+            <p>I'm a fast thinker who adapts quickly to new tools and shifting briefs, comfortable using AI tools to speed up research and first drafts, and highly proficient in Canva, Microsoft Office and Google Workspace.</p>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <strong>5+</strong>
+              <span>Years of experience</span>
+            </div>
+            <div class="stat-card">
+              <strong>100+</strong>
+              <span>Design projects delivered</span>
+            </div>
+            <div class="stat-card">
+              <strong>Ibadan</strong>
+              <span>Based in Nigeria</span>
+            </div>
+            <div class="stat-card">
+              <strong>Remote</strong>
+              <span>Open to full-time & freelance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-sub">Brand identities, social campaigns, product marketing and event materials.</p>
+        <div class="work-grid">
+          <article class="work-card">
+            <img src="images/1.png" alt="Portfolio piece 1" loading="lazy">
+            <div class="info">
+              <h3>Brand & Social Design</h3>
+              <p>Visual identity and content for education and small business clients</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/2.png" alt="Portfolio piece 2" loading="lazy">
+            <div class="info">
+              <h3>Campaign Visuals</h3>
+              <p>Multi-format campaign assets with consistent brand voice</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/5.png" alt="Portfolio piece 5" loading="lazy">
+            <div class="info">
+              <h3>Product Marketing</h3>
+              <p>Product-focused posts and promotional graphics</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/10.png" alt="Portfolio piece 10" loading="lazy">
+            <div class="info">
+              <h3>Social Media Series</h3>
+              <p>Recurring formats and seasonal content</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/11.png" alt="Portfolio piece 11" loading="lazy">
+            <div class="info">
+              <h3>Event & Hospitality</h3>
+              <p>Event flyers and menu design with clear hierarchy</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/12.png" alt="Portfolio piece 12" loading="lazy">
+            <div class="info">
+              <h3>Lifestyle Content</h3>
+              <p>Brand voice posts across fashion and lifestyle</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/13.png" alt="Portfolio piece 13" loading="lazy">
+            <div class="info">
+              <h3>Iterative Ad Concepts</h3>
+              <p>Multiple creative directions for the same product</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/14.png" alt="Portfolio piece 14" loading="lazy">
+            <div class="info">
+              <h3>Real Estate Flyer</h3>
+              <p>Property listing design with clear call to action</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/22.png" alt="Portfolio piece 22" loading="lazy">
+            <div class="info">
+              <h3>Product Catalogue</h3>
+              <p>Organised layout for wide product ranges</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/23.png" alt="Portfolio piece 23" loading="lazy">
+            <div class="info">
+              <h3>Purpose Driven Campaign</h3>
+              <p>Data-backed awareness visuals</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/26.png" alt="Portfolio piece 26" loading="lazy">
+            <div class="info">
+              <h3>Testimonial Content</h3>
+              <p>Proof-based marketing posts</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/30.png" alt="Portfolio piece 30" loading="lazy">
+            <div class="info">
+              <h3>Seasonal Campaigns</h3>
+              <p>Festive and cultural greeting designs</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/32.png" alt="Portfolio piece 32" loading="lazy">
+            <div class="info">
+              <h3>Food Concept</h3>
+              <p>Product and appetite-appeal visuals</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/34.png" alt="Portfolio piece 34" loading="lazy">
+            <div class="info">
+              <h3>Travel Concept</h3>
+              <p>Destination and lifestyle imagery</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/47.png" alt="Portfolio piece 47" loading="lazy">
+            <div class="info">
+              <h3>Brand Identity Work</h3>
+              <p>Logo and visual system elements</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/63.png" alt="Portfolio piece 63" loading="lazy">
+            <div class="info">
+              <h3>Social Series</h3>
+              <p>Consistent format design for ongoing accounts</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/64.png" alt="Portfolio piece 64" loading="lazy">
+            <div class="info">
+              <h3>Marketing Collateral</h3>
+              <p>Flyers and promotional materials</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="images/65.png" alt="Portfolio piece 65" loading="lazy">
+            <div class="info">
+              <h3>Creative Range</h3>
+              <p>Exploratory work across different moods and styles</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="section-sub">What I bring to design, content and remote support roles.</p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Design</h3>
+            <ul>
+              <li>Canva (Expert)</li>
+              <li>Adobe Suite (Basic)</li>
+              <li>Brand identity & logos</li>
+              <li>Flyer & social post design</li>
+              <li>Motion graphics</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Social Media</h3>
+            <ul>
+              <li>Content calendar planning</li>
+              <li>Post scheduling & publishing</li>
+              <li>Community engagement</li>
+              <li>Multi-platform posting</li>
+              <li>Basic performance tracking</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Virtual Assistance</h3>
+            <ul>
+              <li>Email & calendar management</li>
+              <li>Google Forms & Sheets</li>
+              <li>Document preparation</li>
+              <li>Data organisation</li>
+              <li>Meeting coordination</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Productivity</h3>
+            <ul>
+              <li>Microsoft Word, Excel, PowerPoint</li>
+              <li>Google Workspace</li>
+              <li>HTML & CSS basics</li>
+              <li>AI tools for research & drafts</li>
+              <li>Fast adaptation to new tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Let's work together</h2>
+          <p>Open to full-time, part-time and freelance opportunities in graphic design, social media management, virtual assistance and brand content.</p>
+          <div class="contact-links">
+            <a href="mailto:ephraimyisa2002@gmail.com">ephraimyisa2002@gmail.com</a>
+            <a href="https://wa.me/2348102979112">WhatsApp</a>
+            <a href="https://linkedin.com/in/ephraim-yisa-53a9293a9">LinkedIn</a>
+            <a href="https://x.com/theDarkHarlow">X / Twitter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Yisa Ephraim Ifedapo. Designed & built for remote opportunities.</p>
+    </div>
+  </footer>
+</body>
+</html>
